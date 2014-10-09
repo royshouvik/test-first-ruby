@@ -24,7 +24,8 @@ def first_word(a)
 end
 
 def titleize(a)
+	little_words = ["and","the","over"]
 	b = a.split
-	b.each{|i| i.capitalize! if i != "and"}
+	b.each{|i| i.capitalize! if ((not(little_words.include?(i))) or (b.index(i) == 0) )}
 	b.join(" ")
 end
